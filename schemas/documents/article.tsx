@@ -1,6 +1,5 @@
 import { Article } from 'phosphor-react'
 import { validateSlug } from '../../utils/validateSlug'
-import SlugInput from 'sanity-plugin-better-slug'
 
 export default {
   name: 'article',
@@ -20,19 +19,23 @@ export default {
     {
       name: 'slug',
       type: 'slug',
-      inputComponent: SlugInput,
       options: {
         source: 'title',
         maxLength: 30,
-        basePath: 'margin.global/articles/',
       },
       validation: validateSlug,
     },
-    // Body
     {
-      name: 'body',
-      title: 'Body',
-      type: 'body',
+      title: 'Sections',
+      name: 'modules',
+      type: 'array',
+      of: [
+        { type: 'freeform' },
+        { type: 'grid' },
+        { type: 'spread' },
+        { type: 'hero' },
+        { type: 'marquee' },
+      ],
     },
     // SEO
     {

@@ -11,7 +11,6 @@ export const pagesMenu = S.listItem()
   .child(
     S.documentTypeList('page')
       .title('Pages')
-      .filter(`_type == "page" && !(_id in path("drafts.**"))`)
       .child((documentId) =>
         S.document()
           .documentId(documentId)

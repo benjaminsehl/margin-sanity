@@ -68,7 +68,7 @@ class TwitterCard extends React.PureComponent {
                 </div>
 
                 <div className={styles.tweetText}>
-                  <p>Tweet about this...</p>
+                  <p>Check this out 👇</p>
                 </div>
                 <div className={styles.tweetUrlWrapper}>
                   <div className={styles.tweetCardPreview}>

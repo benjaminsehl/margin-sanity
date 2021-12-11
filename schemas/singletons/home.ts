@@ -9,6 +9,16 @@ export default {
   type: 'document',
   icon: House,
   fields: [
+    {
+      name: 'headsup',
+      type: 'note',
+      options: {
+        headline: 'Ignore for now',
+        message:
+          'This whole section should be ignore for now until we settle on what the homepage is going to look like.',
+        tone: 'caution'
+      }
+    },
     // Intro
     {
       name: 'intro',

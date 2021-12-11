@@ -1,6 +1,5 @@
 import { PackageIcon } from '@sanity/icons'
 import pluralize from 'pluralize'
-import SlugInput from 'sanity-plugin-better-slug'
 
 export default {
   name: 'collection',
@@ -20,11 +19,9 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      inputComponent: SlugInput,
       options: {
         source: 'title',
         maxLength: 30,
-        basePath: 'margin.global/collections/',
       },
       validation: (Rule) => Rule.required(),
     },

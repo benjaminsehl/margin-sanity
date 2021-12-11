@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { Tag, Info, Barcode } from 'phosphor-react'
+import { standardViews } from './previews/standard'
 
 // prettier-ignore
 export const products = S.listItem()
@@ -21,6 +22,7 @@ export const products = S.listItem()
                 S.document()
                   .schemaType('product')
                   .documentId(id)
+                  .views(standardViews)
               ),
             // Product variants
             S.listItem()

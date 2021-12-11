@@ -17,8 +17,7 @@
     "media",
     "dashboard-widget-shopify",
     "note-field",
-    "@sanity/color-input",
-    "better-slug"
+    "@sanity/color-input"
   ],
   "env": {
     "development": {

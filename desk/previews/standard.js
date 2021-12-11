@@ -6,7 +6,7 @@ import EditIcon from 'part:@sanity/base/edit-icon'
 import SeoPreview from './seo/seo-preview'
 
 const remoteURL = 'https://margin.global'
-const localURL = 'http://localhost:3000'
+const localURL = 'https://margin.global'
 const previewURL =
   window.location.hostname === 'localhost' ? localURL : remoteURL
 
