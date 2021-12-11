@@ -13,7 +13,7 @@ export const articles = S.listItem()
     .child((documentId) =>
       S.document()
         .documentId(documentId)
-        .schemaType('page')
+        .schemaType('article')
         .views(standardViews)
     ),
   )

@@ -56,13 +56,13 @@ export default {
     },
     // Sections
     {
-      name: 'sections',
-      title: 'Sections',
+      name: 'tabs',
+      title: 'Tabs',
       type: 'array',
       of: [
         {
-          name: 'section',
-          title: 'Section',
+          name: 'tab',
+          title: 'Tab',
           type: 'object',
           fields: [
             // Title
