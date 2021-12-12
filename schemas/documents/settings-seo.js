@@ -73,7 +73,7 @@ export default {
       title: 'Browser Icon (Favicon)',
       name: 'favicon',
       type: 'image',
-      description: 'Upload a 16 x 16 SVG icon to use as the browser icon',
+      description: 'Upload a 32 x 32 SVG icon to use as the browser icon',
       options: {
         accept: 'image/svg+xml'
       },
@@ -83,8 +83,8 @@ export default {
 
           const { dimensions } = decodeAssetUrl(field.asset._ref)
 
-          if (dimensions.width !== 16 || dimensions.height !== 16) {
-            return 'Favicon must be a 16x16 SVG'
+          if (dimensions.width !== 32 || dimensions.height !== 32) {
+            return 'Favicon must be a 32x32 SVG'
           } else {
             return true
           }

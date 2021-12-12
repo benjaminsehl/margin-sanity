@@ -26,7 +26,7 @@ export default {
       title: 'Nav Items',
       name: 'items',
       type: 'array',
-      of: [{ type: 'navPage' }, { type: 'navLink' }, { type: 'navDropdown' }]
+      of: [{ type: 'linkInternal' }, { type: 'linkExternal' }, { type: 'navDropdown' }]
     }
   ],
   preview: {

@@ -5,82 +5,84 @@ export default {
   // __experimental_actions: ['update', 'publish'], // disable for initial publish
   fieldsets: [
     {
-      title: 'Block One',
-      name: 'footerBlock1',
-      description: 'Settings for the first footer block',
-      options: { collapsible: true }
+      title: 'Newsletter',
+      name: 'newsletter'
     },
     {
-      title: 'Block Two',
-      name: 'footerBlock2',
-      description: 'Settings for the second footer block',
-      options: { collapsible: true }
-    },
-    {
-      title: 'Block Three',
-      name: 'footerBlock3',
-      description: 'Settings for the third footer block',
-      options: { collapsible: true }
-    },
-    {
-      title: 'Block Four',
-      name: 'footerBlock4',
-      description: 'Settings for the fourth footer block',
-      options: { collapsible: true }
+      title: 'Copyright',
+      name: 'copyright'
     }
   ],
   fields: [
     {
-      title: 'Block Title',
-      name: 'blockTitle1',
+      title: 'Title',
+      name: 'title',
       type: 'string',
-      fieldset: 'footerBlock1'
+      fieldset: 'newsletter',
+      initialValue: 'Margin Call'
     },
     {
-      title: 'Newsletter',
-      name: 'newsletter',
-      type: 'newsletter',
-      fieldset: 'footerBlock1'
-    },
-    {
-      title: 'Block Title',
-      name: 'blockTitle2',
+      title: 'Subtitle',
+      name: 'subtitle',
       type: 'string',
-      fieldset: 'footerBlock2'
+      fieldset: 'newsletter',
+      initialValue: 'The Weekly Collateral you didn’t think you’d need'
     },
     {
-      title: 'Block Menu',
-      name: 'blockMenu2',
+      title: 'Call to Action',
+      name: 'submit',
+      type: 'string',
+      fieldset: 'newsletter',
+      initialValue: 'Sign up →'
+    },
+    {
+      title: 'Placeholder Text',
+      name: 'placeholder',
+      type: 'string',
+      fieldset: 'newsletter',
+      initialValue: 'Email'
+    },
+    {
+      title: 'Success Message',
+      name: 'successMsg',
+      fieldset: 'newsletter',
+      type: 'string',
+      initialValue: 'Thank you! You’re all signed up'
+    },
+    {
+      title: 'Error Message',
+      name: 'errorMsg',
+      fieldset: 'newsletter',
+      type: 'string',
+      initialValue: 'Something went wrong…'
+    },
+    {
+      title: 'Company Name',
+      name: 'company',
+      type: 'string',
+      initialValue: 'Margin Supply, Inc.',
+      fieldset: 'copyright'
+    },
+    {
+      title: 'Established',
+      name: 'established',
+      type: 'string',
+      initialValue: 'Established 05.16.2021',
+      fieldset: 'copyright'
+    },
+    {
+      title: 'Origin',
+      name: 'origin',
+      type: 'string',
+      initialValue: 'Made in Canada',
+      fieldset: 'copyright'
+    },
+    {
+      title: 'Menu',
+      name: 'menu',
       type: 'reference',
-      to: [{ type: 'menu' }],
-      fieldset: 'footerBlock2'
+      to: [{ type: 'menu' }]
     },
-    {
-      title: 'Block Title',
-      name: 'blockTitle3',
-      type: 'string',
-      fieldset: 'footerBlock3'
-    },
-    {
-      title: 'Block Menu',
-      name: 'blockMenu3',
-      type: 'reference',
-      to: [{ type: 'menu' }],
-      fieldset: 'footerBlock3'
-    },
-    {
-      title: 'Block Title',
-      name: 'blockTitle4',
-      type: 'string',
-      fieldset: 'footerBlock4'
-    },
-    {
-      title: 'Social Links',
-      name: 'social',
-      type: 'array',
-      of: [{ type: 'socialLink' }],
-      fieldset: 'footerBlock4'
-    }
   ],
   preview: {
     prepare() {

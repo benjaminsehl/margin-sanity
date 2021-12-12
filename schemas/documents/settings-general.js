@@ -22,12 +22,6 @@ export default {
       name: 'gtmID',
       type: 'string'
     },
-    {
-      title: 'Klaviyo Site ID (Public API Key)',
-      description: 'For product waitlist and newsletter forms',
-      name: 'klaviyoAccountID',
-      type: 'string'
-    }
   ],
   preview: {
     prepare() {

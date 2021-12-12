@@ -27,7 +27,7 @@ export default {
     },
     {
       title: 'Sections',
-      name: 'modules',
+      name: 'sections',
       type: 'array',
       of: [
         { type: 'freeform' },

@@ -37,13 +37,13 @@ import settings from './singletons/settings'
 import body from './blocks/body'
 
 // Module types
-import grid from './modules/grid'
-import hero from './modules/hero'
-import marquee from './modules/marquee'
-import spread from './modules/spread'
-import newsletter from './modules/newsletter'
-import productHero from './modules/product-hero'
-import collectionGrid from './modules/collection-grid'
+import grid from './sections/grid'
+import hero from './sections/hero'
+import marquee from './sections/marquee'
+import spread from './sections/spread'
+import newsletter from './sections/newsletter'
+import productHero from './sections/product-hero'
+import collectionGrid from './sections/collection-grid'
 
 
 // Object types
