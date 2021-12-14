@@ -1,4 +1,5 @@
 import { ImageSquare } from 'phosphor-react'
+import { PAGE_REFERENCES } from '../../constants'
 
 const crops = [
   { title: 'Original', value: 0 },
@@ -43,19 +44,9 @@ export default {
         },
         {
           title: 'Link',
-          type: 'reference',
           name: 'link',
-          to: [
-            {
-              type: 'product',
-            },
-            {
-              type: 'page',
-            },
-            {
-              type: 'article',
-            },
-          ],
+          type: 'reference',
+          to: PAGE_REFERENCES
         },
         {
           title: 'Display Size (aspect ratio)',
