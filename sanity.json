@@ -10,14 +10,15 @@
   "plugins": [
     "@sanity/base",
     "@sanity/components",
+    "@sanity/desk-tool",
     "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
     "media",
     "dashboard-widget-shopify",
     "note-field",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "dashboard-widget-document-list"
   ],
   "env": {
     "development": {

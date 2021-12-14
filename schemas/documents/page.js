@@ -10,7 +10,7 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'URL Slug',
@@ -19,9 +19,9 @@ export default {
       validation: validateSlug,
       options: {
         source: 'title',
-        maxLength: 30,
+        maxLength: 30
       },
-      description: '(required)',
+      description: '(required)'
     },
     {
       title: 'Sections',
@@ -32,26 +32,27 @@ export default {
         { type: 'grid' },
         { type: 'spread' },
         { type: 'hero' },
-        { type: 'marquee' },
+        { type: 'marquee' }
       ],
+      hidden: ({ parent }) => parent.slug.current === 'dispatches'
     },
     {
       title: 'SEO',
       name: 'seo',
-      type: 'seo',
-    },
+      type: 'seo'
+    }
   ],
   preview: {
     select: {
       title: 'title',
-      slug: 'slug',
+      slug: 'slug'
     },
     prepare({ title = 'Untitled', slug = {} }) {
       const path = `/${slug.current}`
       return {
         title,
-        subtitle: slug.current ? path : '(missing slug)',
+        subtitle: slug.current ? path : '(missing slug)'
       }
-    },
-  },
+    }
+  }
 }

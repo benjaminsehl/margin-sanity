@@ -11,16 +11,7 @@ export default {
       layout: { width: 'medium' }
     },
     {
-      name: 'project-users'
-    },
-    {
       name: 'project-info'
-    },
-    {
-      name: 'shopify-intro',
-      layout: {
-        width: 'medium',
-      },
     },
     {
       name: 'shopify-connect',

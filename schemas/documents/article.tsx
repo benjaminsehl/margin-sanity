@@ -15,15 +15,26 @@ export default {
       description: 'Title displayed in browser tab / search engine results',
       validation: (Rule) => Rule.required(),
     },
-    // Slug
     {
+      name: 'issue',
+      title: 'Issue',
+      type: 'string',
+    },
+    {
+      title: 'URL Slug',
       name: 'slug',
       type: 'slug',
+      validation: validateSlug,
       options: {
-        source: 'title',
+        source: 'issue',
         maxLength: 30,
       },
-      validation: validateSlug,
+      description: '(required)',
+    },
+    {
+      name: 'excerpt',
+      type: 'text',
+      rows: 4
     },
     {
       title: 'Sections',
