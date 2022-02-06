@@ -17,6 +17,7 @@ export const PAGE_REFERENCES = [
   { type: 'article' },
   { type: 'collection' },
   { type: 'home' },
+  { type: 'help' },
   { type: 'product' },
   { type: 'page' },
 ]

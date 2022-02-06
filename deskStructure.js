@@ -23,6 +23,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { articles } from './desk/articles'
 // import { collections } from './desk/collections'
 import { home } from './desk/home'
+import { help } from './desk/help'
 import { products } from './desk/products'
 
 import { settingsMenu } from './desk/settingsMenu'
@@ -34,6 +35,7 @@ const hiddenDocTypes = listItem =>
     'article',
     'collection',
     'home',
+    'help',
     'media.tag',
     'page',
     'product',
@@ -70,6 +72,7 @@ export default () => {
         products,
         pagesMenu,
         articles,
+        help,
         // S.divider(),
         // collections,
         S.divider(),

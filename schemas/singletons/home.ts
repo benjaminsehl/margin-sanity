@@ -1,5 +1,4 @@
 import { House } from 'phosphor-react'
-import { getPriceRange } from '../../utils/getPriceRange'
 
 const TITLE = 'Home'
 
@@ -7,131 +6,88 @@ export default {
   name: 'home',
   title: TITLE,
   type: 'document',
+  groups: [{ name: 'seo', title: 'SEO' }],
   icon: House,
   fields: [
     {
-      name: 'headsup',
-      type: 'note',
-      options: {
-        headline: 'Ignore for now',
-        message:
-          'This whole section should be ignore for now until we settle on what the homepage is going to look like.',
-        tone: 'caution'
-      }
-    },
-    // Intro
-    {
-      name: 'intro',
-      title: 'Intro',
-      type: 'body'
-    },
-    // Featured collections
-    {
-      name: 'featuredCollections',
-      title: 'Featured collections',
+      name: 'heros',
       type: 'array',
       of: [
         {
-          title: 'Collection',
-          type: 'reference',
-          to: [{ type: 'collection' }]
-        }
-      ],
-      validation: Rule => Rule.max(2).unique()
-    },
-    // Gallery
-    {
-      name: 'gallery',
-      title: 'Gallery',
-      type: 'array',
-      of: [
-        {
-          name: 'galleryProduct',
+          name: 'hero',
           type: 'object',
+          options: {
+            editModal: 'fullscreen'
+          },
           fields: [
             {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              validation: Rule => Rule.required()
+              name: 'images',
+              type: 'array',
+              of: [
+                {
+                  type: 'image',
+                  options: {
+                    hotspot: true
+                  },
+                  fields: [
+                    {
+                      name: 'hiddenScreens',
+                      title: 'Hidden from:',
+                      type: 'array',
+                      of: [{ type: 'string' }],
+                      options: {
+                        isHighlighted: true,
+                        list: [
+                          { title: 'XS', value: 'xs:hidden' },
+                          { title: 'S', value: 'sm:hidden' },
+                          { title: 'M', value: 'md:hidden' },
+                          { title: 'L', value: 'lg:hidden' },
+                          { title: 'XL', value: 'xl:hidden' }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             },
             {
-              name: 'productWithVariant',
-              title: 'Product + Variant',
-              type: 'productWithVariant',
-              validation: Rule => Rule.required()
+              name: 'caption',
+              type: 'text',
+              rows: 2
             },
             {
-              name: 'title',
-              title: 'Title',
-              type: 'string'
+              name: 'product',
+              type: 'productWithVariant'
             }
-          ],
-          preview: {
-            select: {
-              defaultVariantTitle: 'productWithVariant.product.store.variants.0.store.title',
-              image: 'image',
-              isDeleted: 'productWithVariant.product.store.isDeleted',
-              priceRange: 'productWithVariant.product.store.priceRange',
-              status: 'productWithVariant.product.store.status',
-              title: 'productWithVariant.product.store.title',
-              variantTitle: 'productWithVariant.variant.store.title'
-            },
-            // TODO: DRY with `objects/productWithVariant`
-            prepare(selection) {
-              const {
-                defaultVariantTitle,
-                image,
-                isDeleted,
-                priceRange,
-                status,
-                title,
-                variantTitle
-              } = selection
-              const productVariantTitle = variantTitle || defaultVariantTitle
-
-              let previewTitle = [title]
-              if (productVariantTitle) {
-                previewTitle.push(`[${productVariantTitle}]`)
-              }
-
-              let subtitle = getPriceRange(priceRange)
-              if (status !== 'active') {
-                subtitle = '(Unavailable in Shopify)'
-              }
-              if (isDeleted) {
-                subtitle = '(Deleted from Shopify)'
-              }
-
-              return {
-                media: image,
-                subtitle,
-                title: previewTitle.join(' ')
-              }
-            }
-          }
+          ]
         }
       ]
     },
-    // Featured products
     {
-      name: 'featuredProducts',
-      title: 'Featured products',
-      type: 'array',
-      of: [
+      name: 'displayOptions',
+      type: 'object',
+      options: {
+        columns: 2
+      },
+      fields: [
         {
-          title: 'Product',
-          name: 'product',
-          type: 'productWithVariant'
+          name: 'lightNav',
+          type: 'boolean',
+          initialValue: true
+        },
+        {
+          name: 'hideFooter',
+          type: 'boolean',
+          initialValue: true
         }
-      ],
-      validation: Rule => Rule.unique()
+      ]
     },
     // SEO
     {
       name: 'seo',
       title: 'SEO',
-      type: 'seo'
+      type: 'seo',
+      group: 'seo'
     }
   ],
   preview: {

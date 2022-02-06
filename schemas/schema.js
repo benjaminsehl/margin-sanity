@@ -31,6 +31,7 @@ import redirect from './documents/redirect'
 
 // Singleton document types
 import home from './singletons/home'
+import help from './singletons/help'
 import settings from './singletons/settings'
 
 // Block content
@@ -121,6 +122,7 @@ export default createSchema({
     redirect,
     // Singleton document types
     home,
+    help,
     settings,
     // Block content
     body,

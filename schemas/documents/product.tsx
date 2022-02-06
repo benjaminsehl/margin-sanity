@@ -12,6 +12,18 @@ export default {
   title: 'Product',
   type: 'document',
   icon: TagIcon,
+  groups: [
+    { name: 'details', title: 'Details' },
+    { name: 'benefits', title: 'Benefits' },
+    { name: 'ingredients', title: 'Ingredients' },
+    { name: 'seo', title: 'SEO' }
+  ],
+  fieldsets: [
+    { name: 'details', title: 'Details', options: { collapsible: true, collapsed: false } },
+    { name: 'benefits', title: 'Benefits', options: { collapsible: true, collapsed: false } },
+    { name: 'ingredients', title: 'Ingredients', options: { collapsible: true, collapsed: false } },
+    { name: 'seo', title: 'SEO', options: { collapsible: true, collapsed: false } }
+  ],
   fields: [
     // Product hidden status
     {
@@ -30,32 +42,32 @@ export default {
       title: 'Title',
       name: 'titleProxy',
       type: 'proxyString',
-      options: { field: 'store.title' }
+      options: { field: 'store.title' },
+      group: 'details',
+      fieldset: 'details'
     },
     // Slug (proxy)
     {
       title: 'Slug',
       name: 'slugProxy',
       type: 'proxyString',
+      group: 'details',
+      fieldset: 'details',
       options: { field: 'store.slug.current' }
     },
     // Images
     {
-      title: 'Images',
-      name: 'images',
-      type: 'array',
-      options: { layout: 'grid' },
-      of: [
-        {
-          name: 'image',
-          title: 'Image',
-          type: 'image',
-          options: { hotspot: true }
-        }
-      ]
+      name: 'featuredImage',
+      title: 'Featured Image',
+      type: 'image',
+      group: 'details',
+      fieldset: 'details',
+      options: { hotspot: true }
     },
-    // Sections
+    // Accordion
     {
+      group: 'details',
+      fieldset: 'details',
       name: 'tabs',
       title: 'Tabs',
       type: 'array',
@@ -91,24 +103,92 @@ export default {
       ],
       validation: Rule => Rule.max(3)
     },
-    // Body
+    // Benefits
     {
-      name: 'body',
-      title: 'Body',
-      type: 'body'
+      name: 'benefitsImage',
+      title: 'Image',
+      type: 'image',
+      group: 'benefits',
+      fieldset: 'benefits',
+      options: { hotspot: true }
     },
+    {
+      name: 'benefitsHeading',
+      title: 'heading',
+      type: 'string',
+      group: 'benefits',
+      fieldset: 'benefits'
+    },
+    {
+      name: 'benefitList',
+      title: 'Benefits',
+      type: 'array',
+      group: 'benefits',
+      fieldset: 'benefits',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'benefit', type: 'string' },
+            { name: 'description', type: 'text', rows: 4 }
+          ]
+        }
+      ]
+    },
+
     // Shopify product
     {
       name: 'store',
       title: 'Shopify',
       type: 'shopifyProduct',
-      description: 'Product data from Shopify (read-only)'
+      description: 'Product data from Shopify (read-only)',
+      hidden: true
+    },
+    {
+      name: 'ingredientsImage',
+      title: 'Image',
+      description: 'Only shown on mobile',
+      type: 'image',
+      group: 'ingredients',
+      fieldset: 'ingredients',
+      options: { hotspot: true }
+    },
+    {
+      name: 'ingredientsHeading',
+      title: 'Heading',
+      type: 'text',
+      rows: 5,
+      group: 'ingredients',
+      fieldset: 'ingredients'
+    },
+    {
+      name: 'activeIngredients',
+      group: 'ingredients',
+      fieldset: 'ingredients',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'name', type: 'string' },
+            { name: 'description', type: 'text' }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'allIngredients',
+      group: 'ingredients',
+
+      fieldset: 'ingredients',
+      type: 'text'
     },
     // SEO
     {
       name: 'seo',
       title: 'SEO',
-      type: 'seo'
+      type: 'seo',
+      group: 'seo'
     }
   ],
   orderings: [

@@ -6,6 +6,7 @@ export default {
   name: 'page',
   type: 'document',
   icon: File,
+  groups: [{ name: 'seo', title: 'SEO' }],
   fields: [
     {
       name: 'title',
@@ -39,7 +40,8 @@ export default {
     {
       title: 'SEO',
       name: 'seo',
-      type: 'seo'
+      type: 'seo',
+      group: 'seo'
     }
   ],
   preview: {
