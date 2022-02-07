@@ -38,11 +38,11 @@ export default {
                       options: {
                         isHighlighted: true,
                         list: [
-                          { title: 'XS', value: 'xs-lock:hidden' },
-                          { title: 'S', value: 'sm-lock:hidden' },
-                          { title: 'M', value: 'md-lock:hidden' },
-                          { title: 'L', value: 'lg-lock:hidden' },
-                          { title: 'XL', value: 'xl-lock:hidden' }
+                          { title: 'XS', value: 'xs-only:hidden' },
+                          { title: 'S', value: 'sm-only:hidden' },
+                          { title: 'M', value: 'md-only:hidden' },
+                          { title: 'L', value: 'lg-only:hidden' },
+                          { title: 'XL', value: 'xl-only:hidden' }
                         ]
                       }
                     }
